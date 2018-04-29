@@ -12,7 +12,7 @@ with open(csvpath1, newline="") as csvfile:
     for row in budgetReader:
         budgetHeader = [row[0]]
         row_count = sum(1 for row in budgetReader)
-        total_months = int(row_count - 1)
+        total_months = int(row_count)
 
         for i in range(2, row_count):
             total_revenue += float(i[1])
