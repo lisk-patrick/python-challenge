@@ -8,13 +8,19 @@ budgetData = []
 csvpath1 = os.path.join("..","HOMEWORK","Instructions","PyBank","raw_data", "budget_data_1.csv")
 #csvpath2 = os.path.join("..", "HOMEWORK", "Instructions", "PyBank", "raw_data", "budget_data_2.csv")
 
-with open(csvpath1, newline="") as csvfile1:
-    budgetReader1 = csv.reader(csvfile1, delimiter= ",")
-    
-    current_revenue = 0
-    sum_month2month_revenue = 0
-   
-    for row in budgetReader1:
+def csvReader():    
+    with open(csvpath1, newline="") as csvfile1:
+        budgetReader1 = csv.reader(csvfile1, delimiter= ",")
+        budegetReader2 = csv.reader(csvfile2, delimiter= ",")
+        for row in budgetReader1:
+        
+            def row2row_avg():
+                rowbyrow = []
+                row_change = row[1] - row.next[1]
+                monthly_avg_change = float(row_change / 2)
+                print(monthly_avg_change)
+
+        total_rev = sum(row[1])
         month_count = sum(1 for row in budgetReader1)
         total_months = int(month_count)
         date.append(row[0])
@@ -28,7 +34,6 @@ with open(csvpath1, newline="") as csvfile1:
         else:
             month2month_difference = next_revenue - current_revenue
             sum_month2month_revenue += float(current_revenue)
-            month2month_avg = float(sum_month2month_revenue / 2)
             sum_month2month_revenue = 0
         
        # for i in range(2, row_count):
